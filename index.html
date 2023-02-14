@@ -12,6 +12,58 @@
         />
     </head>
     <body>
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <img
+                    class="img-thumbnail"
+                    src="img/foto.jpeg"
+                    style="height: 200px; width: auto"
+                />
+
+                <h2 class="my-0 fw-normal">Pedro Morais</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <h5>14 setembro 2000</h5>
+
+                    <h5>Coimbra</h5>
+
+                    <h5>
+                        Empresa: @Html.DisplayFor(modelItem =>
+                        item.Empresa.Nome) @{ decimal sum = 0; foreach (var
+                        classi in item.Empresa.Classificacoes) { sum +=
+                        classi.ClassificacaoReserva; } if
+                        (item.Empresa.Classificacoes.Count > 0) { sum /=
+                        item.Empresa.Classificacoes.Count;
+                        <span>@sum/10</span>
+                        } }
+                        <svg
+                            bootstrap-icon="Star"
+                            class="text-warning align-bottom"
+                            width="24"
+                            height="24"
+                            aria-label="Classificação"
+                        ></svg>
+                    </h5>
+                </ul>
+                <hr />
+                <h1 class="card-title pricing-card-title">
+                    @Html.DisplayFor(modelItem => item.PrecoDia)€
+                    <small class="text-muted fw-light"></small>
+                </h1>
+                @if (User.IsInRole("Cliente")) {
+                <hr />
+                <a
+                    class="w-100 btn btn-lg btn-outline-primary"
+                    asp-controller="Reservas"
+                    asp-action="Create"
+                    asp-route-VeiculoId="@item.Id"
+                >
+                    Reservar
+                </a>
+                }
+            </div>
+        </div>
         <h1>Hello, world!</h1>
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-secondary">Primary</button>
