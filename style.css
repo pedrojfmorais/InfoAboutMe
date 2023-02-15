@@ -1,8 +1,23 @@
-#myCard{
+#myCard {
     width: fit-content;
+    background-image: url("img/fundo.jpg");
+    background-size: cover;
+    border-color: #7eb9ba;
 }
 
-#foto{
-    height: 25em; 
+hr {
+    background-color: #1b5d5e; /* Modern Browsers */
+}
+
+#foto, #baby {
+    height: 25em;
     width: auto;
+}
+
+#baby, .icons {
+    height: 2em;
+}
+
+#exampleModal .modal-content, #exampleModal img{
+    border-radius: 5%;
 }
