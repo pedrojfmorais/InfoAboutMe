@@ -1,6 +1,12 @@
+body{
+    background-image: url("img/coimbra.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #myCard {
     width: fit-content;
-    background-image: url("img/fundo.jpg");
+    background-color: rgba(255, 255, 255, 0.8);
     background-size: cover;
     border-color: #7eb9ba;
 }
